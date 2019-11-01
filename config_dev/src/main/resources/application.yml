@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/aawwaa/config.git #git@github.com:aawwaa/config.git
+          search-paths: config-application,consumer
+          skip-ssl-validation: true
+          username: 2716242923@qq.com
+          password: zhj123@321
+  application:
+    name: config-dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+
+server:
+  port: 8090

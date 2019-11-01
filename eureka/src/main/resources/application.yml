@@ -1,0 +1,18 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost                 #服务注册中心实例的主机名
+  client:
+    register-with-eureka: false         #实例是否在eureka服务器上注册自己的信息以供其他服务发现，默认为true  是否注册自己
+    fetch-registry: true               # 此客户端是否获取eureka服务器注册表上的注册信息，默认为true     如果是单机就设置为false
+    serviceUrl:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #与Eureka注册服务中心的通信zone和url地址   单机模式
+      defaultZone: http://eureka2:8762/eureka/  #与Eureka注册服务中心的通信zone和url地址
+
+
+
+spring:
+  application:
+    name: eureka-1

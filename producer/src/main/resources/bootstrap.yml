@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8090/
+      name: producer                      # application文件名
+      label: master                       # 分支
+      discovery:
+        enabled: true
+        service-id: config-dev            # 注册中心的服务名
+      profile: dev                        # 指定配置文件的环境
+    bus:
+      enabled: true
+      trace:
+        enabled: true                     # 开启消息跟踪
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+server:
+  port: 8010
